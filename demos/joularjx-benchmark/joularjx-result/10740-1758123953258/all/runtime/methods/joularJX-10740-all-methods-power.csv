@@ -1,0 +1,3 @@
+com.fortytwotalents.experiments.joularjx.PrimesCounter.isPrime,0.4878
+java.util.stream.Streams$RangeIntSpliterator.forEachRemaining,0.0188
+java.lang.ref.Reference.waitForReferencePendingList,0.0000

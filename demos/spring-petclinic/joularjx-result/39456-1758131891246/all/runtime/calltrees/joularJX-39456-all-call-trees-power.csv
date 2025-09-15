@@ -1,0 +1,3 @@
+java.lang.Thread.run;java.lang.Thread.runWith;org.apache.tomcat.util.net.Acceptor.run;org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept;org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept;sun.nio.ch.ServerSocketChannelImpl.accept;sun.nio.ch.ServerSocketChannelImpl.implAccept;sun.nio.ch.Net.accept,0.0000
+java.lang.ref.Reference$ReferenceHandler.run;java.lang.ref.Reference.processPendingReferences;java.lang.ref.Reference.waitForReferencePendingList,0.0000
+java.lang.Thread.run;java.lang.Thread.runWith;org.apache.tomcat.util.net.NioEndpoint$Poller.run;sun.nio.ch.SelectorImpl.select;sun.nio.ch.SelectorImpl.lockAndDoSelect;sun.nio.ch.WEPollSelectorImpl.doSelect;sun.nio.ch.WEPoll.wait,0.0000
