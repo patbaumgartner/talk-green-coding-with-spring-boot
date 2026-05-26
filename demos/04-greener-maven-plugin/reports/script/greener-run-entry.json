@@ -1,0 +1,59 @@
+{
+  "tool" : "script",
+  "report" : {
+    "runId" : "1779777568746",
+    "timestamp" : "2026-05-26T06:39:28.772636100Z",
+    "durationSeconds" : 60,
+    "measurements" : [ {
+      "methodName" : "spring-petclinic-4.0.0-SNAPSHOT [app]",
+      "energyJoules" : 14.17
+    }, {
+      "methodName" : "system [total cpu]",
+      "energyJoules" : 791.77
+    } ],
+    "totalEnergyJoules" : 805.9399999999999,
+    "totalEnergyStats" : {
+      "n" : 5,
+      "mean" : 811.346,
+      "stddev" : 31.51728145002358,
+      "min" : 776.57,
+      "max" : 854.83,
+      "median" : 805.9399999999999,
+      "ci95Half" : 39.13323794193717
+    }
+  },
+  "workloadStats" : {
+    "tool" : "script",
+    "totalRequests" : -1,
+    "failedRequests" : -1,
+    "durationSeconds" : 389
+  },
+  "comparison" : {
+    "overallStatus" : "UNCHANGED",
+    "baselineTotalJoules" : 823.21,
+    "currentTotalJoules" : 805.9399999999999,
+    "totalDeltaPercent" : -2.097885108295586,
+    "methodComparisons" : [ {
+      "methodName" : "spring-petclinic-4.0.0-SNAPSHOT [app]",
+      "baselineEnergyJoules" : 38.13,
+      "currentEnergyJoules" : 14.17,
+      "deltaPercent" : -62.837660634670854,
+      "improved" : true
+    }, {
+      "methodName" : "system [total cpu]",
+      "baselineEnergyJoules" : 785.08,
+      "currentEnergyJoules" : 791.77,
+      "deltaPercent" : 0.8521424568196797,
+      "improved" : false
+    } ],
+    "thresholdBreached" : false,
+    "threshold" : 10.0,
+    "pValue" : 0.7202891773705777,
+    "cohenD" : -0.23468834441367253,
+    "statisticalDecision" : true,
+    "metricUsed" : "TOTAL_ENERGY",
+    "baselineEnergyPerRequestMillijoules" : null,
+    "currentEnergyPerRequestMillijoules" : null,
+    "failed" : false
+  }
+}

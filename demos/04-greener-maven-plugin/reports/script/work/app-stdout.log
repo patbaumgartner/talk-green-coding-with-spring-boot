@@ -1,0 +1,51 @@
+
+
+              |\      _,,,--,,_
+             /,`.-'`'   ._  \-;;,_
+  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______
+ |       | '---''(_/._)-'(_\_)   |   |   |   |  |  | |   |       |
+ |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _
+ |   |_| |   |___  |   | |       |   |   |   |       |   |       | \ \ \ \
+ |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \ \ \ \
+ |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )
+ |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /
+ ==================================================================/_/_/_/
+
+:: Built with Spring Boot :: 4.0.3
+
+
+2026-05-26T07:34:03.551+01:00  INFO 39280 --- [           main] o.s.s.petclinic.PetClinicApplication     : Starting PetClinicApplication v4.0.0-SNAPSHOT using Java 25.0.3 with PID 39280 (C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\spring-petclinic\target\spring-petclinic-4.0.0-SNAPSHOT.jar started by patbaumgartner in C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\work)
+2026-05-26T07:34:03.560+01:00  INFO 39280 --- [           main] o.s.s.petclinic.PetClinicApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-05-26T07:34:05.149+01:00  INFO 39280 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-26T07:34:05.245+01:00  INFO 39280 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 3 JPA repository interfaces.
+2026-05-26T07:34:06.512+01:00  INFO 39280 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 64715 (http)
+2026-05-26T07:34:06.540+01:00  INFO 39280 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-26T07:34:06.540+01:00  INFO 39280 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-05-26T07:34:06.600+01:00  INFO 39280 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2937 ms
+2026-05-26T07:34:06.990+01:00  INFO 39280 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-26T07:34:07.277+01:00  INFO 39280 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:594dfdd8-c11d-4e7c-950c-03f3c11273f8 user=SA
+2026-05-26T07:34:07.279+01:00  INFO 39280 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-26T07:34:07.533+01:00  INFO 39280 --- [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-26T07:34:07.641+01:00  INFO 39280 --- [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-05-26T07:34:08.314+01:00  INFO 39280 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-26T07:34:08.421+01:00  INFO 39280 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:594dfdd8-c11d-4e7c-950c-03f3c11273f8]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 594DFDD8-C11D-4E7C-950C-03F3C11273F8/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-26T07:34:09.847+01:00  INFO 39280 --- [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-26T07:34:09.858+01:00  INFO 39280 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-26T07:34:10.006+01:00  INFO 39280 --- [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-26T07:34:11.930+01:00  INFO 39280 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 13 endpoints beneath base path '/actuator'
+2026-05-26T07:34:12.101+01:00  INFO 39280 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 64715 (http) with context path '/'
+2026-05-26T07:34:12.115+01:00  INFO 39280 --- [           main] o.s.s.petclinic.PetClinicApplication     : Started PetClinicApplication in 9.318 seconds (process running for 10.198)
+2026-05-26T07:34:14.079+01:00  INFO 39280 --- [io-64715-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-26T07:34:14.079+01:00  INFO 39280 --- [io-64715-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-26T07:34:14.081+01:00  INFO 39280 --- [io-64715-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

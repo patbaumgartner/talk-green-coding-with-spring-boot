@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greener Spring Boot — Energy Report</title>
+  <style>
+    :root,[data-theme="dark"]{
+      --cyan:#00e5ff;--magenta:#ff00e5;--green:#39ff14;--yellow:#ffe600;
+      --red:#ff3366;--bg:#0a0a0a;--card:#141414;--card-alt:#181820;
+      --border:#222;--border-glow:#00e5ff18;--text:#d4d4d4;--muted:#777;
+      --white:#f0f0f0;
+      --badge-green-bg:#39ff1412;--badge-green-border:#39ff1430;
+      --badge-red-bg:#ff336612;--badge-red-border:#ff336630;
+      --badge-yellow-bg:#ffe60012;--badge-yellow-border:#ffe60030;
+      --code-bg:#0e0e12;--row-hover:#ffffff06;
+      --hero-bg:linear-gradient(135deg,#0a0a14 0%,#0d0d1a 50%,#0a0a14 100%);
+      --alert-danger-bg:#ff336612;--alert-danger-border:#ff336630}
+    [data-theme="light"]{
+      --cyan:#0097a7;--magenta:#c2185b;--green:#2e7d32;--yellow:#f9a825;
+      --red:#c62828;--bg:#f5f5f5;--card:#ffffff;--card-alt:#fafafa;
+      --border:#ddd;--border-glow:#0097a718;--text:#333;--muted:#888;
+      --white:#111;
+      --badge-green-bg:#e8f5e9;--badge-green-border:#a5d6a7;
+      --badge-red-bg:#ffebee;--badge-red-border:#ef9a9a;
+      --badge-yellow-bg:#fff8e1;--badge-yellow-border:#ffe082;
+      --code-bg:#f0f0f0;--row-hover:#00000006;
+      --hero-bg:linear-gradient(135deg,#e0f7fa 0%,#f3e5f5 50%,#e0f7fa 100%);
+      --alert-danger-bg:#ffebee;--alert-danger-border:#ef9a9a}
+    @media(prefers-color-scheme:light){
+      html:not([data-theme="dark"]){
+        --cyan:#0097a7;--magenta:#c2185b;--green:#2e7d32;--yellow:#f9a825;
+        --red:#c62828;--bg:#f5f5f5;--card:#ffffff;--card-alt:#fafafa;
+        --border:#ddd;--border-glow:#0097a718;--text:#333;--muted:#888;
+        --white:#111;
+        --badge-green-bg:#e8f5e9;--badge-green-border:#a5d6a7;
+        --badge-red-bg:#ffebee;--badge-red-border:#ef9a9a;
+        --badge-yellow-bg:#fff8e1;--badge-yellow-border:#ffe082;
+        --code-bg:#f0f0f0;--row-hover:#00000006;
+        --hero-bg:linear-gradient(135deg,#e0f7fa 0%,#f3e5f5 50%,#e0f7fa 100%);
+        --alert-danger-bg:#ffebee;--alert-danger-border:#ef9a9a}}
+    *{box-sizing:border-box}
+    body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+         margin:0;background:var(--bg);color:var(--text);line-height:1.6;
+         transition:background .3s,color .3s}
+    .container{max-width:960px;margin:0 auto;padding:32px 24px}
+    .hero{text-align:center;padding:48px 24px 36px;
+          background:var(--hero-bg);
+          border-bottom:1px solid var(--border);margin-bottom:32px;position:relative}
+    .hero h1{font-size:32px;color:var(--white);margin:0 0 6px;font-weight:700;
+             letter-spacing:-0.5px}
+    .hero h1 span{color:var(--cyan);text-shadow:0 0 20px color-mix(in srgb,var(--cyan) 40%,transparent)}
+    .hero .tagline{color:var(--muted);font-size:15px;margin:0}
+    .hero .tagline a{color:var(--magenta);text-decoration:none;
+                     border-bottom:1px solid transparent;transition:border-color .2s}
+    .hero .tagline a:hover{border-bottom-color:var(--magenta)}
+    .theme-toggle{position:absolute;top:16px;right:24px;background:var(--card);
+                  border:1px solid var(--border);border-radius:20px;padding:6px 14px;
+                  cursor:pointer;color:var(--muted);font-size:13px;
+                  transition:all .2s}
+    .theme-toggle:hover{border-color:var(--cyan);color:var(--cyan)}
+    h2{font-size:16px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;
+       color:var(--magenta);margin:0 0 16px;padding-bottom:10px;
+       border-bottom:1px solid var(--border)}
+    h3{color:var(--red);font-size:14px;text-transform:uppercase;letter-spacing:1px;
+       margin:20px 0 12px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:10px;
+          padding:24px;margin-bottom:20px;transition:border-color .2s,background .3s;
+          overflow-x:auto}
+    .card:hover{border-color:var(--cyan)}
+    .metrics{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:4px}
+    .metric{flex:1;min-width:130px;padding:14px 18px;
+            background:var(--bg);border:1px solid var(--border);border-radius:8px;
+            transition:background .3s}
+    .metric .label{font-size:11px;text-transform:uppercase;letter-spacing:0.8px;
+                   color:var(--muted);margin-bottom:6px}
+    .metric .value{font-size:22px;font-weight:700;color:var(--white);
+                   letter-spacing:-0.3px}
+    .improved{color:var(--green)!important;text-shadow:0 0 10px color-mix(in srgb,var(--green) 30%,transparent)}
+    .regressed{color:var(--red)!important;text-shadow:0 0 10px color-mix(in srgb,var(--red) 30%,transparent)}
+    .unchanged{color:var(--yellow)!important;text-shadow:0 0 10px color-mix(in srgb,var(--yellow) 30%,transparent)}
+    table{width:100%;border-collapse:collapse;font-size:13px;margin-top:4px}
+    th{background:var(--bg);text-align:left;padding:10px 14px;
+       border-bottom:2px solid var(--border);color:var(--cyan);
+       font-size:11px;text-transform:uppercase;letter-spacing:0.8px;font-weight:600}
+    td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text)}
+    tr:last-child td{border-bottom:none}
+    tr:hover td{background:var(--row-hover)}
+    .badge{display:inline-block;padding:3px 10px;border-radius:20px;
+           font-size:12px;font-weight:600;letter-spacing:0.3px}
+    .badge-green{background:var(--badge-green-bg);color:var(--green);border:1px solid var(--badge-green-border)}
+    .badge-red{background:var(--badge-red-bg);color:var(--red);border:1px solid var(--badge-red-border)}
+    .badge-yellow{background:var(--badge-yellow-bg);color:var(--yellow);border:1px solid var(--badge-yellow-border)}
+    .note{padding:14px 18px;border-radius:8px;margin-top:16px;font-size:13px;
+          color:var(--muted);background:var(--bg);border:1px solid var(--border);
+          line-height:1.5}
+    .alert{padding:14px 18px;border-radius:8px;margin-top:16px;font-weight:500;
+           line-height:1.5}
+    .alert-danger{background:var(--alert-danger-bg);border:1px solid var(--alert-danger-border);color:var(--red)}
+    code{background:var(--code-bg);padding:2px 7px;border-radius:4px;font-size:12px;
+         color:var(--cyan);font-family:'JetBrains Mono','Fira Code',monospace}
+    td code{word-break:break-all}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+ th.num{text-align:right}
+   .footer{text-align:center;color:var(--muted);font-size:12px;padding:28px 0 12px;
+            border-top:1px solid var(--border);margin-top:36px}
+    .footer a{color:var(--cyan);text-decoration:none}
+    .footer a:hover{text-decoration:underline}
+    .filter-toggle{background:var(--card-alt);border:1px solid var(--border);
+                   border-radius:20px;padding:6px 16px;cursor:pointer;
+                   color:var(--cyan);font-size:13px;font-weight:600;
+                   transition:all .2s;letter-spacing:0.3px}
+    .filter-toggle:hover{border-color:var(--cyan);background:var(--bg)}
+    .filter-toggle.active{background:var(--badge-green-bg);border-color:var(--badge-green-border);
+                          color:var(--green)}
+  </style>
+</head>
+<body>
+<div class="hero">
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">&#9681; Theme</button>
+  <h1><span>&#9889;</span> Greener Spring Boot</h1>
+  <p class="tagline">Energy Report — powered by
+    <a href="https://github.com/joular/joularcore">Joular Core</a>
+  </p>
+</div>
+<div class="container">
+  <div class="card">
+    <h2>Measurement Summary</h2>
+    <div class="metrics">
+    <div class="metric"><div class="label">Run</div><div class="value">1779777568746</div></div>
+    <div class="metric"><div class="label">Measured at</div><div class="value">2026-05-26 07:39:28 BST</div></div>
+    <div class="metric"><div class="label">Duration</div><div class="value">60 s</div></div>
+    <div class="metric"><div class="label">Total Energy</div><div class="value">805.94 J</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Workload Profile</h2>
+    <div class="metrics">
+    <div class="metric"><div class="label">Tool</div><div class="value">script</div></div>
+    <div class="metric"><div class="label">Duration</div><div class="value">389 s</div></div>
+    <div class="metric"><div class="label">Requests</div><div class="value">N/A</div></div>
+    <div class="metric"><div class="label">Avg Power</div><div class="value">2.07 W</div></div>
+    </div>
+    <div class="note">Request counts are not available for external tools. See the tool's own output for throughput and latency details.</div>
+  </div>
+  <div class="card">
+    <h2>Measurement Assumptions</h2>
+    <div class="metrics">
+    <div class="metric"><div class="label">Power Source</div><div class="value">RAPL (hardware energy counters)</div></div>
+    </div>
+    <div class="note">Energy measured via Intel/AMD RAPL hardware counters - high accuracy.</div>
+  </div>
+  <div class="card">
+    <h2>Baseline vs Current</h2>
+    <div class="metrics">
+    <div class="metric"><div class="label">Baseline</div><div class="value">823.21 J</div></div>
+    <div class="metric"><div class="label">Current</div><div class="value">805.94 J</div></div>
+    <div class="metric"><div class="label">Change</div><div class="value">-2.10%</div></div>
+    <div class="metric"><div class="label">Threshold</div><div class="value">±10.0%</div></div>
+    <div class="metric"><div class="label">Status</div><div class="value unchanged">→ Stable</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Energy Trend (last 2 runs)</h2>
+    <svg viewBox="0 0 760 220" style="width:100%;height:auto;font-family:inherit;" role="img" aria-label="Energy trend chart">
+      <line x1="56" x2="704" y1="16.0" y2="16.0" stroke="var(--border)" stroke-dasharray="2,3" />
+      <line x1="56" x2="704" y1="58.0" y2="58.0" stroke="var(--border)" stroke-dasharray="2,3" />
+      <line x1="56" x2="704" y1="100.0" y2="100.0" stroke="var(--border)" stroke-dasharray="2,3" />
+      <line x1="56" x2="704" y1="142.0" y2="142.0" stroke="var(--border)" stroke-dasharray="2,3" />
+      <line x1="56" x2="704" y1="184.0" y2="184.0" stroke="var(--border)" stroke-dasharray="2,3" />
+      <text x="50" y="20.0" text-anchor="end" fill="var(--muted)" font-size="10">825.27 J</text>
+      <text x="50" y="62.0" text-anchor="end" fill="var(--muted)" font-size="10">819.92 J</text>
+      <text x="50" y="104.0" text-anchor="end" fill="var(--muted)" font-size="10">814.58 J</text>
+      <text x="50" y="146.0" text-anchor="end" fill="var(--muted)" font-size="10">809.23 J</text>
+      <text x="50" y="188.0" text-anchor="end" fill="var(--muted)" font-size="10">803.88 J</text>
+      <text x="56.0" y="202" text-anchor="middle" fill="var(--muted)" font-size="10">05-26 07:33</text>
+      <text x="704.0" y="202" text-anchor="middle" fill="var(--muted)" font-size="10">05-26 07:42</text>
+      <polyline fill="none" stroke="var(--cyan)" stroke-width="2" points="56.0,32.2 704.0,167.8" />
+      <circle cx="56.0" cy="32.2" r="2.5" fill="var(--cyan)"><title>480d979 · 823.210 J</title></circle>
+      <circle cx="704.0" cy="167.8" r="4.0" fill="var(--cyan)"><title>480d979 · 805.940 J</title></circle>
+    </svg>
+    <div class="note" style="display:flex;gap:1.5em;flex-wrap:wrap;"><span><span style="display:inline-block;width:10px;height:2px;background:var(--cyan);vertical-align:middle;"></span> Total energy (J, left axis)</span></div>
+  </div>
+  <div class="card">
+    <h2>Energy Breakdown</h2>
+    <table><thead><tr><th>Component</th><th class="num">Energy (J)</th><th class="num">Share</th><th class="num">Change</th></tr></thead><tbody>
+      <tr><td><code>system [total cpu]</code></td><td class="num">791.77</td><td class="num">98.2%</td><td class="num"><span class="badge badge-yellow">+0.85%</span></td></tr>
+      <tr><td><code>spring-petclinic-4.0.0-SNAPSHOT [app]</code></td><td class="num">14.17</td><td class="num">1.8%</td><td class="num"><span class="badge badge-green">-62.84%</span></td></tr>
+    </tbody></table>
+  </div>
+  <div class="footer">Made with 🩷 by Patrick Baumgartner — <a href="https://github.com/patbaumgartner/greener-spring-boot">Greener Spring Boot</a></div>
+</div>
+<script>
+function toggleTheme(){
+  var html=document.documentElement;
+  var t=html.getAttribute('data-theme')==='dark'?'light':'dark';
+  html.setAttribute('data-theme',t);
+}
+function toggleMethodFilter(){
+  var btn=document.getElementById('methodFilterBtn');
+  var hint=document.getElementById('methodFilterHint');
+  var rows=document.querySelectorAll('.method-row');
+  var active=btn.classList.toggle('active');
+  var rank=0;
+  for(var i=0;i<rows.length;i++){
+    if(active && !rows[i].classList.contains('app-method')){
+      rows[i].style.display='none';
+    } else {
+      rows[i].style.display='';
+      rank++;
+      rows[i].cells[0].textContent=rank;
+    }
+  }
+  btn.textContent=active?'Show All Methods':'Show App Only';
+  if(hint) hint.textContent=active
+    ?'Showing application classes only. Click to show all methods.'
+    :'Showing all methods. Click to filter to application classes only.';
+}
+</script>
+</body>
+</html>

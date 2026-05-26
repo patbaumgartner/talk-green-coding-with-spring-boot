@@ -1,0 +1,16 @@
+org.springframework.samples.petclinic.owner.VisitController.loadPetWithVisit,0.0018
+org.springframework.samples.petclinic.owner.PetController.findOwner,0.0018
+org.springframework.samples.petclinic.owner.PetTypeFormatter.parse,0.0018
+org.springframework.samples.petclinic.owner.PetTypeFormatter.parse,0.0017
+org.springframework.samples.petclinic.owner.OwnerController.showOwner,0.0013
+org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm,0.0013
+org.springframework.samples.petclinic.owner.PetTypeFormatter.parse,0.0013
+org.springframework.samples.petclinic.owner.VisitController.loadPetWithVisit,0.0028
+org.springframework.samples.petclinic.owner.PetTypeFormatter.parse,0.0056
+org.springframework.samples.petclinic.owner.PetTypeFormatter.parse,0.0012
+org.springframework.samples.petclinic.owner.PetController.populatePetTypes,0.0022
+org.springframework.samples.petclinic.owner.PetTypeFormatter.parse,0.0022
+org.springframework.samples.petclinic.vet.VetController.findPaginated,0.0019
+org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm,0.0039
+org.springframework.samples.petclinic.owner.PetTypeFormatter.parse,0.0019
+org.springframework.samples.petclinic.owner.PetTypeFormatter.parse,0.0019

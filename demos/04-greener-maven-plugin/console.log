@@ -1,0 +1,321 @@
+
+==> Using port 64715 for Spring PetClinic
+
+
+══════════════════════════════════════════════════════════════════════
+ STEP 1: Preflight check (greener:doctor)
+══════════════════════════════════════════════════════════════════════
+
+==> Verifying environment: RAPL access, JoularCore binary, workload script...
+[greener] Environment doctor:
+  [ OK ] OS / arch: Windows 11 / amd64
+  [WARN] RAPL energy file: not applicable on windows 11
+      hint: On macOS/Windows Joular Core uses platform-specific power sources
+  [ OK ] msr kernel module: not required on windows 11
+  [WARN] Joular Core binary: not yet resolved
+      hint: Will be auto-downloaded on first run; ensure outbound HTTPS to api.github.com
+  [ OK ] Joular Code Java agent: not configured (method-level disabled)
+  [ OK ] Spring Boot jar auto-detect: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\spring-petclinic\target\spring-petclinic-4.0.0-SNAPSHOT.jar
+[greener] Result: WARN � measurement should work but accuracy may be reduced.
+
+
+══════════════════════════════════════════════════════════════════════
+ STEP 2: Build Spring PetClinic
+══════════════════════════════════════════════════════════════════════
+
+==> Packaging fat-jar (skipped if JAR already exists)...
+
+==> Reusing existing JAR: spring-petclinic-4.0.0-SNAPSHOT.jar
+
+==> JAR: target/spring-petclinic-4.0.0-SNAPSHOT.jar
+
+==> Cleaning previous run artifacts...
+
+
+══════════════════════════════════════════════════════════════════════
+ STEP 3: First energy measurement (no baseline yet — establishes initial data)
+══════════════════════════════════════════════════════════════════════
+
+==> Running: com.patbaumgartner:greener-spring-boot-maven-plugin:0.2.0-SNAPSHOT:measure
+
+==>   - JoularCore is auto-downloaded to ~/.greener/cache/ if not present
+
+==>   - App starts, workload runs (10 s warmup + 60 s measurement)
+
+==>   - HTML report written to: /c/Users/patbaumgartner/presentation-green-coding-with-spring-boot/demos/04-greener-maven-plugin/reports/
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------< org.springframework.samples:spring-petclinic >------------
+[INFO] Building petclinic 4.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- greener:0.2.0-SNAPSHOT:measure (default-cli) @ spring-petclinic ---
+[INFO] [greener] Auto-detected Spring Boot jar: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\spring-petclinic\target\spring-petclinic-4.0.0-SNAPSHOT.jar
+[INFO] [greener] Downloading Joular Core 0.0.1-beta-4 ...
+[INFO] [greener] Starting application: spring-petclinic-4.0.0-SNAPSHOT.jar
+[INFO] [greener] Application PID: 11532
+[INFO] [greener] Waiting for health check ...
+[INFO] [greener] Application is ready
+[INFO] [greener] Starting Joular Core (PID 11532)
+[INFO] [greener] Warmup phase: 10 s ...
+[INFO] [greener] Iteration 1/5 � measurement phase: 60 s ...
+May 26, 2026 7:28:03 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Read 80 power samples from Joular Core CSV: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\raw\iterations\joularcore-output-iter-1.csv
+May 26, 2026 7:28:03 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Energy summary - total CPU: 785.08 J (avg 9.81 W), app share: 38.13 J (avg 0.48 W)
+[INFO] [greener] Iteration 2/5 � measurement phase: 60 s ...
+May 26, 2026 7:29:22 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Read 78 power samples from Joular Core CSV: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\raw\iterations\joularcore-output-iter-2.csv
+May 26, 2026 7:29:22 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Energy summary - total CPU: 828.24 J (avg 10.62 W), app share: 21.66 J (avg 0.28 W)
+[INFO] [greener] Iteration 3/5 � measurement phase: 60 s ...
+May 26, 2026 7:30:40 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Read 77 power samples from Joular Core CSV: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\raw\iterations\joularcore-output-iter-3.csv
+May 26, 2026 7:30:40 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Energy summary - total CPU: 752.65 J (avg 9.77 W), app share: 14.45 J (avg 0.19 W)
+[INFO] [greener] Iteration 4/5 � measurement phase: 60 s ...
+May 26, 2026 7:32:00 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Read 79 power samples from Joular Core CSV: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\raw\iterations\joularcore-output-iter-4.csv
+May 26, 2026 7:32:00 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Energy summary - total CPU: 830.97 J (avg 10.52 W), app share: 18.18 J (avg 0.23 W)
+[INFO] [greener] Iteration 5/5 � measurement phase: 60 s ...
+May 26, 2026 7:33:18 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Read 77 power samples from Joular Core CSV: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\raw\iterations\joularcore-output-iter-5.csv
+May 26, 2026 7:33:18 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Energy summary - total CPU: 790.98 J (avg 10.27 W), app share: 15.12 J (avg 0.20 W)
+May 26, 2026 7:33:48 AM com.patbaumgartner.greener.core.runner.ApplicationRunner stop
+WARNING: Application did not stop in 30 s � force-killing
+May 26, 2026 7:33:48 AM com.patbaumgartner.greener.core.baseline.BaselineManager saveBaseline
+INFO: Saved energy baseline to: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\latest-energy-report.json
+
+========================================================================
+ greener-spring-boot - Energy Consumption Report
+========================================================================
+ Run ID      : 1779776883119
+ Timestamp   : 2026-05-26T06:28:03.148749800Z
+ Duration    : 60 s
+ Total Energy: 823.21 J
+ Power Source : RAPL (hardware energy counters)
+               Energy measured via Intel/AMD RAPL hardware counters - high accuracy.
+------------------------------------------------------------------------
+ Use-Case Energy:
+   Tool         : script
+   Duration     : 393 s
+   Requests     : N/A (external tool - counts not captured)
+   Avg Power    : 2.09 W  (energy/req unavailable - no request count)
+------------------------------------------------------------------------
+ Top 10 measurements by energy consumption:
+   Name                                                         Joules
+   --------------------------------------------------------------------
+   system [total cpu]                                           785.08
+   spring-petclinic-4.0.0-SNAPSHOT [app]                         38.13
+------------------------------------------------------------------------
+ Baseline: No baseline found - this run will be saved as the new baseline.
+------------------------------------------------------------------------
+========================================================================
+
+May 26, 2026 7:33:48 AM com.patbaumgartner.greener.core.reporter.HtmlReporter generateReport
+INFO: HTML report written to: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\greener-energy-report.html
+[INFO] [greener] HTML report: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\greener-energy-report.html
+May 26, 2026 7:33:48 AM com.patbaumgartner.greener.core.baseline.RunEntryStore save
+INFO: Saved run entry [script] to: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\greener-run-entry.json
+May 26, 2026 7:33:48 AM com.patbaumgartner.greener.core.baseline.RunEntryStore loadAll
+INFO: Loaded 1 run entries from: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  08:52 min
+[INFO] Finished at: 2026-05-26T07:33:48+01:00
+[INFO] ------------------------------------------------------------------------
+
+==> Report:
+/c/Users/patbaumgartner/presentation-green-coding-with-spring-boot/demos/04-greener-maven-plugin/reports/script/greener-energy-report.html
+
+
+══════════════════════════════════════════════════════════════════════
+ STEP 4: Save result as energy baseline
+══════════════════════════════════════════════════════════════════════
+
+==> Running: com.patbaumgartner:greener-spring-boot-maven-plugin:0.2.0-SNAPSHOT:update-baseline
+
+==>   - Promotes the latest measurement to energy-baseline.json
+
+==>   - Subsequent runs compare against this snapshot
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------< org.springframework.samples:spring-petclinic >------------
+[INFO] Building petclinic 4.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- greener:0.2.0-SNAPSHOT:update-baseline (default-cli) @ spring-petclinic ---
+May 26, 2026 7:33:54 AM com.patbaumgartner.greener.core.baseline.BaselineManager loadBaseline
+INFO: Loaded energy baseline from: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\latest-energy-report.json (created: 2026-05-26T06:33:48.516405200Z, branch: main)
+May 26, 2026 7:33:54 AM com.patbaumgartner.greener.core.baseline.BaselineManager saveBaseline
+INFO: Saved energy baseline to: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\energy-baseline.json
+[INFO] Energy baseline updated: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\energy-baseline.json
+[INFO]   commit : 480d979
+[INFO]   branch : main
+[INFO]   energy : 823.21 J
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.546 s
+[INFO] Finished at: 2026-05-26T07:33:54+01:00
+[INFO] ------------------------------------------------------------------------
+
+==> Baseline saved: /c/Users/patbaumgartner/presentation-green-coding-with-spring-boot/demos/04-greener-maven-plugin/energy-baseline.json
+
+{
+  "version" : "1.2",
+  "createdAt" : "2026-05-26T06:33:54.831375700Z",
+  "commitSha" : "480d979",
+  "branch" : "main",
+  "report" : {
+    "runId" : "1779776883119",
+    "timestamp" : "2026-05-26T06:28:03.148749800Z",
+    "durationSeconds" : 60,
+    "measurements" : [ {
+      "methodName" : "spring-petclinic-4.0.0-SNAPSHOT [app]",
+      "energyJoules" : 38.13
+    }, {
+      "methodName" : "system [total cpu]",
+      "energyJoules" : 785.08
+    } ],
+    "totalEnergyJoules" : 823.21,
+    "totalEnergyStats" : {
+      "n" : 5,
+      "mean" : 819.092,
+      "stddev" : 34.42939979145728,
+      "min" : 767.1,
+      "max" : 849.9,
+      "median" : 823.21,
+      "ci95Half" : 42.74905170274993
+    }
+  },
+  "workloadStats" : {
+    "tool" : "script",
+    "totalRequests" : -1,
+    "failedRequests" : -1,
+    "durationSeconds" : 393
+  }
+}
+
+══════════════════════════════════════════════════════════════════════
+ STEP 5: Second measurement — regression detection against baseline
+══════════════════════════════════════════════════════════════════════
+
+==> Running: com.patbaumgartner:greener-spring-boot-maven-plugin:0.2.0-SNAPSHOT:measure (compares against baseline)
+
+==>   - A WARNING is logged when energy exceeds the threshold
+
+==>   - Set -Dgreener.failOnRegression=true to fail the build on regression
+
+==>   - Set -Dgreener.iterations=5 for statistical regression detection
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------< org.springframework.samples:spring-petclinic >------------
+[INFO] Building petclinic 4.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- greener:0.2.0-SNAPSHOT:measure (default-cli) @ spring-petclinic ---
+[INFO] [greener] Auto-detected Spring Boot jar: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\spring-petclinic\target\spring-petclinic-4.0.0-SNAPSHOT.jar
+[INFO] [greener] Downloading Joular Core 0.0.1-beta-4 ...
+[INFO] [greener] Starting application: spring-petclinic-4.0.0-SNAPSHOT.jar
+[INFO] [greener] Application PID: 39280
+[INFO] [greener] Waiting for health check ...
+[INFO] [greener] Application is ready
+[INFO] [greener] Starting Joular Core (PID 39280)
+[INFO] [greener] Warmup phase: 10 s ...
+[INFO] [greener] Iteration 1/5 � measurement phase: 60 s ...
+May 26, 2026 7:36:52 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Read 78 power samples from Joular Core CSV: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\raw\iterations\joularcore-output-iter-1.csv
+May 26, 2026 7:36:52 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Energy summary - total CPU: 763.74 J (avg 9.79 W), app share: 25.48 J (avg 0.33 W)
+[INFO] [greener] Iteration 2/5 � measurement phase: 60 s ...
+May 26, 2026 7:38:10 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Read 77 power samples from Joular Core CSV: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\raw\iterations\joularcore-output-iter-2.csv
+May 26, 2026 7:38:10 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Energy summary - total CPU: 811.47 J (avg 10.54 W), app share: 18.70 J (avg 0.24 W)
+[INFO] [greener] Iteration 3/5 � measurement phase: 60 s ...
+May 26, 2026 7:39:28 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Read 78 power samples from Joular Core CSV: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\raw\iterations\joularcore-output-iter-3.csv
+May 26, 2026 7:39:28 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Energy summary - total CPU: 791.77 J (avg 10.15 W), app share: 14.17 J (avg 0.18 W)
+[INFO] [greener] Iteration 4/5 � measurement phase: 60 s ...
+May 26, 2026 7:40:46 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Read 77 power samples from Joular Core CSV: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\raw\iterations\joularcore-output-iter-4.csv
+May 26, 2026 7:40:46 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Energy summary - total CPU: 838.23 J (avg 10.89 W), app share: 16.60 J (avg 0.22 W)
+[INFO] [greener] Iteration 5/5 � measurement phase: 60 s ...
+May 26, 2026 7:42:04 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Read 77 power samples from Joular Core CSV: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\raw\iterations\joularcore-output-iter-5.csv
+May 26, 2026 7:42:04 AM com.patbaumgartner.greener.core.reader.JoularCoreResultReader readResults
+INFO: Energy summary - total CPU: 759.95 J (avg 9.87 W), app share: 16.62 J (avg 0.22 W)
+May 26, 2026 7:42:35 AM com.patbaumgartner.greener.core.runner.ApplicationRunner stop
+WARNING: Application did not stop in 30 s � force-killing
+May 26, 2026 7:42:35 AM com.patbaumgartner.greener.core.baseline.BaselineManager loadBaseline
+INFO: Loaded energy baseline from: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\energy-baseline.json (created: 2026-05-26T06:33:54.831375700Z, branch: main)
+May 26, 2026 7:42:35 AM com.patbaumgartner.greener.core.baseline.BaselineManager saveBaseline
+INFO: Saved energy baseline to: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\latest-energy-report.json
+
+========================================================================
+ greener-spring-boot - Energy Consumption Report
+========================================================================
+ Run ID      : 1779777568746
+ Timestamp   : 2026-05-26T06:39:28.772636100Z
+ Duration    : 60 s
+ Total Energy: 805.94 J
+ Power Source : RAPL (hardware energy counters)
+               Energy measured via Intel/AMD RAPL hardware counters - high accuracy.
+------------------------------------------------------------------------
+ Use-Case Energy:
+   Tool         : script
+   Duration     : 389 s
+   Requests     : N/A (external tool - counts not captured)
+   Avg Power    : 2.07 W  (energy/req unavailable - no request count)
+------------------------------------------------------------------------
+ Top 10 measurements by energy consumption:
+   Name                                                         Joules
+   --------------------------------------------------------------------
+   system [total cpu]                                           791.77
+   spring-petclinic-4.0.0-SNAPSHOT [app]                         14.17
+------------------------------------------------------------------------
+ Baseline comparison:
+   Baseline Total : 823.21 J
+   Current Total  : 805.94 J
+   Delta          : -2.10%
+   Threshold      : +/-10.0%
+   Status         : ~ UNCHANGED
+------------------------------------------------------------------------
+========================================================================
+
+May 26, 2026 7:42:35 AM com.patbaumgartner.greener.core.reporter.HtmlReporter generateReport
+INFO: HTML report written to: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\greener-energy-report.html
+[INFO] [greener] HTML report: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\greener-energy-report.html
+May 26, 2026 7:42:35 AM com.patbaumgartner.greener.core.baseline.RunEntryStore save
+INFO: Saved run entry [script] to: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports\script\greener-run-entry.json
+May 26, 2026 7:42:35 AM com.patbaumgartner.greener.core.baseline.RunEntryStore loadAll
+INFO: Loaded 1 run entries from: C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\04-greener-maven-plugin\reports
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  08:35 min
+[INFO] Finished at: 2026-05-26T07:42:35+01:00
+[INFO] ------------------------------------------------------------------------
+
+==> Report:
+/c/Users/patbaumgartner/presentation-green-coding-with-spring-boot/demos/04-greener-maven-plugin/reports/script/greener-energy-report.html
+
+══════════════════════════════════════════════════════════════════════
+ Demo complete
+══════════════════════════════════════════════════════════════════════
+
+  Report  : /c/Users/patbaumgartner/presentation-green-coding-with-spring-boot/demos/04-greener-maven-plugin/reports/
+  Baseline: /c/Users/patbaumgartner/presentation-green-coding-with-spring-boot/demos/04-greener-maven-plugin/energy-baseline.json
+

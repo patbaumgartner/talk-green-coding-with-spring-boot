@@ -1,0 +1,23 @@
+# JoularCore run output
+01-joularcore/joularcore-*.csv
+01-joularcore/console.log
+
+# JoularJX run output
+02-joularjx/joularjx-result/
+02-joularjx/console.log
+
+# JoularCode Java run output
+03-joularcode-java/joular-code-java-results/
+03-joularcode-java/console.log
+
+# Greener Maven plugin run output
+04-greener-maven-plugin/reports/
+04-greener-maven-plugin/energy-baseline.json
+04-greener-maven-plugin/energy-baseline-trend.json
+04-greener-maven-plugin/console.log
+
+# Greener Maven plugin + JoularCode run output
+05-greener-maven-plugin-joularcode/reports/
+05-greener-maven-plugin-joularcode/energy-baseline.json
+05-greener-maven-plugin-joularcode/energy-baseline-trend.json
+05-greener-maven-plugin-joularcode/console.log

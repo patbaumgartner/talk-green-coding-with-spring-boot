@@ -1,0 +1,7 @@
+org.springframework.samples.petclinic.owner.OwnerController.findPaginatedForOwnersLastName,0.0998
+org.springframework.samples.petclinic.owner.OwnerController.findPaginatedForOwnersLastName,0.2444
+org.springframework.samples.petclinic.vet.VetController.findPaginated,0.1048
+org.springframework.samples.petclinic.owner.OwnerController.findPaginatedForOwnersLastName,0.0006
+org.springframework.samples.petclinic.owner.OwnerController.findPaginatedForOwnersLastName,0.4365
+org.springframework.samples.petclinic.vet.VetController.findPaginated,0.1309
+org.springframework.samples.petclinic.vet.VetController.findPaginated,0.0039

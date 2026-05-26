@@ -1,0 +1,3 @@
+java.lang.Throwable.fillInStackTrace,0.0000
+java.lang.Thread.dumpThreads,0.0828
+java.lang.ref.Reference.waitForReferencePendingList,0.0000

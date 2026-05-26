@@ -1,0 +1,2 @@
+org.springframework.samples.petclinic.owner.OwnerController.findOwner,0.0005
+org.springframework.samples.petclinic.owner.OwnerController.findPaginatedForOwnersLastName,0.0001

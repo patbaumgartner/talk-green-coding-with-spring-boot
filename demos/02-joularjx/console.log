@@ -1,0 +1,104 @@
+
+==> JoularJX agent already present: joularjx-3.1.0.jar
+
+==> Cleaning previous run artifacts...
+
+==> Building spring-petclinic (skipped if JAR already exists)...
+
+==> Reusing existing JAR: spring-petclinic-4.0.0-SNAPSHOT.jar
+
+==> JAR: /c/Users/patbaumgartner/presentation-green-coding-with-spring-boot/demos/02-joularjx/../spring-petclinic/target/spring-petclinic-4.0.0-SNAPSHOT.jar
+
+==> JoularCore binary: C:/Program Files/joularcore/joularcore.exe
+
+==> Runtime config written (joular-core-path=C:/Program Files/joularcore/joularcore.exe)
+
+==> Starting Spring PetClinic with JoularJX agent...
+
+==> PetClinic PID: 33401
+26/05/2026 07:20:14.526 - [INFO] - +---------------------------------+
+26/05/2026 07:20:14.528 - [INFO] - | JoularJX Agent Version 3.1.0    |
+26/05/2026 07:20:14.528 - [INFO] - +---------------------------------+
+26/05/2026 07:20:14.572 - [INFO] - Results will be stored in joularjx-result\16808-1779776414568\
+26/05/2026 07:20:14.598 - [INFO] - Initializing for platform: 'windows 11' running on architecture: 'amd64'
+26/05/2026 07:20:14.598 - [INFO] - Initializing for Joular Core
+26/05/2026 07:20:14.600 - [INFO] - Please wait while initializing JoularJX...
+26/05/2026 07:20:17.731 - [INFO] - Initialization finished
+26/05/2026 07:20:17.733 - [INFO] - Started monitoring application with ID 16808
+
+
+              |\      _,,,--,,_
+             /,`.-'`'   ._  \-;;,_
+  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______
+ |       | '---''(_/._)-'(_\_)   |   |   |   |  |  | |   |       |
+ |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _
+ |   |_| |   |___  |   | |       |   |   |   |       |   |       | \ \ \ \
+ |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \ \ \ \
+ |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )
+ |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /
+ ==================================================================/_/_/_/
+
+:: Built with Spring Boot :: 4.0.3
+
+
+2026-05-26T07:20:20.411+01:00  INFO 16808 --- [JX Agent Thread] o.s.s.petclinic.PetClinicApplication     : Starting PetClinicApplication v4.0.0-SNAPSHOT using Java 25.0.3 with PID 16808 (C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\spring-petclinic\target\spring-petclinic-4.0.0-SNAPSHOT.jar started by patbaumgartner in C:\Users\patbaumgartner\presentation-green-coding-with-spring-boot\demos\02-joularjx)
+2026-05-26T07:20:20.425+01:00  INFO 16808 --- [JX Agent Thread] o.s.s.petclinic.PetClinicApplication     : No active profile set, falling back to 1 default profile: "default"
+26/05/2026 07:20:21.740 - [INFO] - Thread CPU time negative, taking previous time + 1 : 187500001 for thread: 51
+26/05/2026 07:20:21.741 - [INFO] - Thread CPU time negative, taking previous time + 1 : 1 for thread: 55
+2026-05-26T07:20:25.682+01:00  INFO 16808 --- [JX Agent Thread] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-26T07:20:25.811+01:00  INFO 16808 --- [JX Agent Thread] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 3 JPA repository interfaces.
+2026-05-26T07:20:28.188+01:00  INFO 16808 --- [JX Agent Thread] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-05-26T07:20:28.255+01:00  INFO 16808 --- [JX Agent Thread] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-26T07:20:28.258+01:00  INFO 16808 --- [JX Agent Thread] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-05-26T07:20:28.404+01:00  INFO 16808 --- [JX Agent Thread] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 7800 ms
+2026-05-26T07:20:29.337+01:00  INFO 16808 --- [JX Agent Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-26T07:20:30.016+01:00  INFO 16808 --- [JX Agent Thread] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:e2772d26-f923-40f3-acab-bb971c8c4dec user=SA
+2026-05-26T07:20:30.037+01:00  INFO 16808 --- [JX Agent Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-26T07:20:30.532+01:00  INFO 16808 --- [JX Agent Thread] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-26T07:20:30.762+01:00  INFO 16808 --- [JX Agent Thread] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-05-26T07:20:32.169+01:00  INFO 16808 --- [JX Agent Thread] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-26T07:20:32.355+01:00  INFO 16808 --- [JX Agent Thread] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:e2772d26-f923-40f3-acab-bb971c8c4dec]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: E2772D26-F923-40F3-ACAB-BB971C8C4DEC/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-26T07:20:34.418+01:00  INFO 16808 --- [JX Agent Thread] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-26T07:20:34.431+01:00  INFO 16808 --- [JX Agent Thread] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-26T07:20:34.650+01:00  INFO 16808 --- [JX Agent Thread] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+
+==> PetClinic listening on port 54244
+    Waiting for health check ready
+
+==> Running Gatling load test (60 s, 10 concurrent users)...
+> request count                                                                      |     1,656 |     1,656 |         -
+> mean response time (ms)                                                            |       141 |       141 |         -
+> mean throughput (rps)                                                              |     23.32 |     23.32 |         -
+
+==> Load test complete.
+
+==> Shutting down PetClinic gracefully (JoularJX writes total/methods on JVM exit)...
+
+══════════════════════════════════════════════════════════════════════
+ JoularJX — top 10 methods by total energy (J)
+══════════════════════════════════════════════════════════════════════
+
+(note: using per-cycle runtime data — shutdown hook did not run)
+
+method                                                                                           energy_J
+org.springframework.samples.petclinic.PetClinicApplication.main                                  38.914
+org.springframework.samples.petclinic.owner.OwnerController.findPaginatedForOwnersLastName       0.4497
+org.springframework.samples.petclinic.owner.PetTypeFormatter.parse                               0.2655
+org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm                  0.1921
+org.springframework.samples.petclinic.owner.OwnerController.findOwner                            0.1836
+org.springframework.samples.petclinic.owner.PetController.processCreationForm                    0.1567
+org.springframework.samples.petclinic.vet.VetController.findPaginated                            0.1469
+org.springframework.samples.petclinic.system.WebConfiguration$$SpringCGLIB$$0.CGLIB$STATICHOOK1  0.132
+org.springframework.samples.petclinic.owner.VisitController.loadPetWithVisit                     0.0812
+org.springframework.samples.petclinic.owner.OwnerController.showOwner                            0.081

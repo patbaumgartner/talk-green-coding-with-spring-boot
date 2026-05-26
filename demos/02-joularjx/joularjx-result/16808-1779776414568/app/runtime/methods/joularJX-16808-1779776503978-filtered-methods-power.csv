@@ -1,0 +1,5 @@
+org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm,0.0012
+org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm,0.0006
+org.springframework.samples.petclinic.owner.PetTypeFormatter.parse,0.0006
+org.springframework.samples.petclinic.owner.PetTypeFormatter.parse,0.0016
+org.springframework.samples.petclinic.owner.PetTypeFormatter.parse,0.0007

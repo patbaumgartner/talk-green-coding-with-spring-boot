@@ -1,0 +1,18 @@
+{
+  "entries" : [ {
+    "timestamp" : "2026-05-26T06:33:48.572951100Z",
+    "runId" : "480d979",
+    "totalEnergyJoules" : 823.21,
+    "energyPerRequestMillijoules" : null,
+    "commitSha" : "480d979",
+    "branch" : "main"
+  }, {
+    "timestamp" : "2026-05-26T06:42:35.501566Z",
+    "runId" : "480d979",
+    "totalEnergyJoules" : 805.9399999999999,
+    "energyPerRequestMillijoules" : null,
+    "commitSha" : "480d979",
+    "branch" : "main"
+  } ],
+  "version" : 1
+}

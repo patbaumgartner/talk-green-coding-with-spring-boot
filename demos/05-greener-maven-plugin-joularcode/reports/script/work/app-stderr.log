@@ -1,0 +1,6 @@
+26-05-2026 07:51:20 INFO: Initializing Joular Code Java...
+26-05-2026 07:51:20 INFO: Selecting power source type: ringbuffer
+26-05-2026 07:51:20 INFO: Warming up OS bean...
+26-05-2026 07:51:22 INFO: Monitoring loop started.
+26-05-2026 07:51:22 INFO: Initializing ring buffer source: Local\JoularCoreRing
+26-05-2026 07:51:22 INFO: Joular Code Java started successfully.

@@ -1,0 +1,11 @@
+sun.nio.ch.Net.accept,0.0000
+sun.nio.ch.WEPoll.wait,0.0000
+java.lang.Thread.dumpThreads,0.2628
+java.net.NetworkInterface.isUp0,0.0000
+java.net.NetworkInterface.isP2P0,0.0000
+java.net.NetworkInterface.getAll,0.0000
+java.lang.Thread.sleepNanos0,0.0000
+java.lang.StringLatin1.replace,0.0000
+java.lang.ClassLoader.defineClass0,0.0000
+java.lang.invoke.MethodHandles$Lookup.getDirectMethodCommon,0.0000
+java.lang.ref.Reference.waitForReferencePendingList,0.0000

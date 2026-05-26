@@ -1,0 +1,34 @@
+{
+  "version" : "1.2",
+  "createdAt" : "2026-05-26T06:33:54.831375700Z",
+  "commitSha" : "480d979",
+  "branch" : "main",
+  "report" : {
+    "runId" : "1779776883119",
+    "timestamp" : "2026-05-26T06:28:03.148749800Z",
+    "durationSeconds" : 60,
+    "measurements" : [ {
+      "methodName" : "spring-petclinic-4.0.0-SNAPSHOT [app]",
+      "energyJoules" : 38.13
+    }, {
+      "methodName" : "system [total cpu]",
+      "energyJoules" : 785.08
+    } ],
+    "totalEnergyJoules" : 823.21,
+    "totalEnergyStats" : {
+      "n" : 5,
+      "mean" : 819.092,
+      "stddev" : 34.42939979145728,
+      "min" : 767.1,
+      "max" : 849.9,
+      "median" : 823.21,
+      "ci95Half" : 42.74905170274993
+    }
+  },
+  "workloadStats" : {
+    "tool" : "script",
+    "totalRequests" : -1,
+    "failedRequests" : -1,
+    "durationSeconds" : 393
+  }
+}
